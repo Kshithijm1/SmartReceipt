@@ -35,6 +35,17 @@ class Settings(BaseSettings):
     HF_MODEL_ZERO_SHOT: str = "facebook/bart-large-mnli"
     HF_MODEL_CLASSIFIER: str = "distilbert-base-uncased-finetuned-sst-2-english"
 
+    # Plaid
+    PLAID_CLIENT_ID:    str
+    PLAID_SECRET:       str
+    PLAID_ENVIRONMENT:  str  = "sandbox"   # one of "sandbox","development","production"
+
+    # Stripe
+    STRIPE_API_KEY:        str
+    STRIPE_WEBHOOK_SECRET: str
+    STRIPE_ACCOUNT_ID:     Optional[str] = None  # for Connect
+
+
     # Monitoring & Logging
     SENTRY_DSN: Optional[str] = None
     CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost:3000"]
